@@ -16,6 +16,9 @@
 
 ---
 
+### To be done
+- [x] switch between tabs by Ctrl+Tab, Ctrl+Shift+Tab, Ctrl+PgDn, Ctrl+PgUp, Ctrl+Alt+[1-6]
+
 ### Features
 
 - [**Background Image Selector**](https://github.com/KevinSilvester/wezterm-config/blob/master/utils/backdrops.lua)

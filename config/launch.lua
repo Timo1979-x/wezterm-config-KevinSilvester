@@ -8,14 +8,23 @@ local options = {
 if platform.is_win then
    options.default_prog = { 'cmd' }
    options.launch_menu = {
+      { label = 'cmd', args = { 'cmd' } },
+      { label = 'cmd admin', args = { 'C:/Program Files/gsudo/Current/gsudo.exe', 'cmd.exe' } },
       { label = 'PowerShell Core', args = { 'pwsh', '-NoLogo' } },
       { label = 'PowerShell Desktop', args = { 'powershell' } },
-      { label = 'Command Prompt', args = { 'cmd' } },
-      { label = 'Nushell', args = { 'nu' } },
-      { label = 'Msys2', args = { 'ucrt64.cmd' } },
+      -- { label = 'Nushell', args = { 'nu' } },
+      -- { label = 'Msys2', args = { 'ucrt64.cmd' } },
       {
          label = 'Git Bash',
-         args = { 'C:\\Users\\kevin\\scoop\\apps\\git\\current\\bin\\bash.exe' },
+         args = { "c:/Program Files/Git/bin/bash.exe", "--cd-to-home" },
+      },
+      {
+         label = 'Cygwin Bash',
+         args = { "d:/cygwin64/bin/bash.exe", "--login", "-i" },
+      },
+      {
+         label = 'ssh raspberry pi 3',
+         args = { "ssh.exe", "rpi3" },
       },
    }
 elseif platform.is_mac then

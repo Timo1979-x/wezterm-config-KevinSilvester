@@ -10,7 +10,7 @@ if platform.is_mac then
    mod.SUPER_REV = 'SUPER|CTRL'
 elseif platform.is_win or platform.is_linux then
    mod.SUPER = 'ALT' -- to not conflict with Windows key shortcuts
-   mod.SUPER_REV = 'ALT|CTRL'
+   mod.SUPER_REV = 'CTRL'
 end
 
 -- stylua: ignore
@@ -18,7 +18,10 @@ local keys = {
    -- misc/useful --
    { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
    { key = 'F2', mods = 'NONE', action = act.ActivateCommandPalette },
+   { key = 'P', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
+   { key = 'З', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
    { key = 'F3', mods = 'NONE', action = act.ShowLauncher },
+   { key = 'Space', mods = 'SHIFT|CTRL', action = act.ShowLauncher },
    { key = 'F4', mods = 'NONE', action = act.ShowLauncherArgs({ flags = 'FUZZY|TABS' }) },
    {
       key = 'F5',
@@ -47,6 +50,18 @@ local keys = {
          end),
       }),
    },
+
+   -- Tab navigation --
+   { key = 'Tab',        mods = 'CTRL',        action = act.ActivateTabRelative(1) },
+   { key = 'Tab',        mods = 'SHIFT|CTRL',  action = act.ActivateTabRelative(-1) },
+   { key = 'PageDown',   mods = 'CTRL',        action = act.ActivateTabRelative(1) },
+   { key = 'PageUp',     mods = 'CTRL',        action = act.ActivateTabRelative(-1) },
+   { key = '1',          mods = 'CTRL|ALT',    action = act.ActivateTab(0) },
+   { key = '2',          mods = 'CTRL|ALT',    action = act.ActivateTab(1) },
+   { key = '3',          mods = 'CTRL|ALT',    action = act.ActivateTab(2) },
+   { key = '4',          mods = 'CTRL|ALT',    action = act.ActivateTab(3) },
+   { key = '5',          mods = 'CTRL|ALT',    action = act.ActivateTab(4) },
+   { key = '6',          mods = 'CTRL|ALT',    action = act.ActivateTab(5) },
 
    -- cursor movement --
    { key = 'LeftArrow',  mods = mod.SUPER,     action = act.SendString '\u{1b}OH' },
