@@ -185,13 +185,23 @@ local keys = {
 
    -- panes: zoom+close pane
    { key = 'Enter', mods = mod.SUPER,     action = act.TogglePaneZoomState },
-   { key = 'w',     mods = mod.SUPER,     action = act.CloseCurrentPane({ confirm = false }) },
+   -- { key = 'w',     mods = mod.SUPER,     action = act.CloseCurrentPane({ confirm = false }) },
 
    -- panes: navigation
-   { key = 'k',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up') },
-   { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down') },
-   { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left') },
-   { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right') },
+   -- { key = 'k',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up') },
+   -- { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down') },
+   -- { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left') },
+   -- { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right') },
+   { key = 'LeftArrow',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Left') },
+   { key = 'H',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Left') },
+   { key = 'RightArrow',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Right') },
+   { key = 'L',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Right') },
+   { key = 'RightArrow',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Right') },
+   { key = 'K',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Up') },
+   { key = 'UpArrow',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Up') },
+   { key = 'DownArrow',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Down') },
+   { key = 'J',     mods = "SHIFT | CTRL",     action = act.ActivatePaneDirection('Down') },
+
    -- {
    --    key = 'p',
    --    mods = mod.SUPER_REV,
